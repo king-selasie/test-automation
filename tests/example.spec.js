@@ -15,8 +15,8 @@ test('has title', async ({ page }) => {
 test('News tab should be visible and clickable', async ({ page }) => {
   await page.goto('https://blog.hubtel.com');
   const newsTab = await page.locator('li:has-text("News")');
-  await expect(newsTab).toBeVisible(); // Check if 'News' tab is visible
-  await newsTab.click(); // Click on 'News' tab
+  await expect(newsTab).toBeVisible(); 
+  await newsTab.click(); 
   await page.waitForLoadState('domcontentloaded');
   await expect(page).toHaveURL(/category\/news/); // Ensure the URL contains "news
   const pageTitle = await page.locator('h4:text-is("News")');
