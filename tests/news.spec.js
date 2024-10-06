@@ -4,7 +4,7 @@ const { test, expect } = require('@playwright/test');
 test('News section should be visible', async ({ page }) => {
     await page.goto('https://blog.hubtel.com');
     const pressReleaseSection = page.locator('h5:text-is("News")');
-    await expect(pressReleaseSection).toBeVisible(); // Ensure section is visible
+    await expect(pressReleaseSection).toBeVisible(); 
   });
 
   test("Specific news (Ghana's fastes growing company) release should be visible", async ({ page }) => {
@@ -90,7 +90,7 @@ test('News section should be visible', async ({ page }) => {
     const viewAllLink = page.locator('text=View all').nth(3);
     await viewAllLink.click();
     await page.waitForLoadState('domcontentloaded');
-    await expect(page).toHaveURL(/product-updates/);  // Ensure section is visible
+    await expect(page).toHaveURL(/product-updates/);  
   });
 
   test("Specific product update (Hubtel Completes Biggest Upgrades) should be visible", async ({ page }) => {
