@@ -3,7 +3,7 @@ const { test, expect } = require('@playwright/test');
 test('Footer should be visible on the page', async ({ page }) => {
     await page.goto('https://blog.hubtel.com');
     
-    const footer = page.locator('footer');  // Adjust the selector to match your footer section
+    const footer = page.locator('footer');  
     await expect(footer).toBeVisible();
   });
 
