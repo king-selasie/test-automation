@@ -18,9 +18,9 @@ test('News tab should be visible and clickable', async ({ page }) => {
   await expect(newsTab).toBeVisible(); 
   await newsTab.click(); 
   await page.waitForLoadState('domcontentloaded');
-  await expect(page).toHaveURL(/category\/news/); // Ensure the URL contains "news
+  await expect(page).toHaveURL(/category\/news/); 
   const pageTitle = await page.locator('h4:text-is("News")');
-  await expect(pageTitle).toHaveText(/News/); // Ensure the page title is "News"
+  await expect(pageTitle).toHaveText(/News/); 
 });
 
 test('Press release tab should be visible and clickable',async({ page }) => {
@@ -80,22 +80,22 @@ test('Inside Hubtel tab should be visible and clickable',async({ page }) => {
 
 test('Featured blog post should be visible', async ({ page }) => {
   await page.goto('https://blog.hubtel.com');
-  const featuredPost = await page.locator('text=Welcome to Hubtel Engineering'); // Check for the text in the featured post
-  await expect(featuredPost).toBeVisible(); // Ensure the featured post is visible
+  const featuredPost = await page.locator('text=Welcome to Hubtel Engineering'); 
+  await expect(featuredPost).toBeVisible(); 
 });
 
 test('Featured blog post should load on click', async ({ page }) => {
   await page.goto('https://blog.hubtel.com');
-  const featuredPostLink = page.locator('a:has-text("Welcome to Hubtel Engineering")'); // Locate the link for the featured post
+  const featuredPostLink = page.locator('a:has-text("Welcome to Hubtel Engineering")'); 
   await featuredPostLink.click();
   await page.waitForLoadState('domcontentloaded');
-  await expect(page).toHaveURL(/welcome-to-hubtel-engineering-innovating-for-many-years-and-beyond/); // Ensure the URL is correct
+  await expect(page).toHaveURL(/welcome-to-hubtel-engineering-innovating-for-many-years-and-beyond/); 
 });
 
 test('Second post should be visible', async ({ page }) => {
   await page.goto('https://blog.hubtel.com');
-  const secondaryPost =await page.locator('h6:text-is("Correction of False Claims About ECG Commercial Agreement")'); // Locate the secondary post
-  await expect(secondaryPost).toBeVisible(); // Check that the secondary post is visible
+  const secondaryPost =await page.locator('h6:text-is("Correction of False Claims About ECG Commercial Agreement")'); 
+  await expect(secondaryPost).toBeVisible();
 });
 
 test('Search icon and input should work', async ({ page }) => {
